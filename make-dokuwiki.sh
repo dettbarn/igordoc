@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # save previous creation, if any
 mv dokuwiki.txt dokuwiki_old.txt
 
