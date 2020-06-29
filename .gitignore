@@ -1,3 +1,6 @@
 dokuwiki.txt
 dokuwiki_old.txt
 *.sh~
+*.ipf
+*.pxp
+*.uxp
