@@ -3,9 +3,46 @@
 # save previous creation, if any
 mv dokuwiki.txt dokuwiki_old.txt
 
+# search for function headers, perhaps predeced by commented lines
+function fn_grep {
+	pcregrep -M '(//.*\r?\n)*Function' $1
+}
+
+# move function header before the comments
+function fn_reorder {
+	perl -0777 -i.original -pe 's/(\/\/(=====|-----).*\r?\n?)((\/\/.*\r?\n?)*)(Function.*\r?\n?)/\n\5\3\n/g' $1
+}
+
+# dokuwiki function formatting
+function fn_format {
+	sed "s/\(\(Function.*\) \([^( ]\+\) \?([^)]*).*$\)/==== \3 ====\n''\1''/g" $1
+}
+
+# remove double-slashes before comments
+function comment_format {
+	sed 's/\/\/\(.*\)/\1/g' $1
+}
+
+# add linebreaks, but not after headings
+function add_breaks {
+	sed 's/\(.*[^=-]$\)/\1\\\\/g' $1
+}
+
+# remove single spaces at beginning of lines
+function rm_front_spaces {
+	sed 's/^ \(.*\)/\1/g' $1
+}
+
 # pipe documentation of all procedures into dokuwiki formatted file
 for i in *.ipf
 do
-        echo "====== $i ======" >> dokuwiki.txt
-        cat "$i" | pcregrep -M '(//.*\r?\n)*Function' | perl -0777 -i.original -pe 's/(\/\/(=====|-----).*\r?\n?)((\/\/.*\r?\n?)*)(Function.*\r?\n?)/\n\5\3\n/g' | sed "s/\(\(Function.*\) \([^( ]\+\) \?([^)]*).*$\)/==== \3 ====\n''\1''/g" |  sed 's/\/\/\(.*\)/\1/g' | sed 's/\(.*[^=-]$\)/\1\\\\/g' | sed 's/^ \(.*\)/\1/g' >> dokuwiki.txt
+	echo "====== $i ======" >> dokuwiki.txt
+	cat "$i" \
+		| fn_grep \
+		| fn_reorder \
+		| fn_format \
+		| comment_format \
+		| add_breaks \
+		| rm_front_spaces \
+		>> dokuwiki.txt
 done
