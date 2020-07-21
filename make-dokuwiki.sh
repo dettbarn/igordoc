@@ -1,7 +1,12 @@
 #!/bin/bash
 
+outf=dokuwiki.txt
+outf_old=dokuwiki_old.txt
+
 # save previous creation, if any
-mv dokuwiki.txt dokuwiki_old.txt
+if [ -f $outf ]; then
+	mv $outf $outf_old
+fi
 
 # search for function headers, perhaps predeced by commented lines
 function fn_grep {
@@ -36,7 +41,7 @@ function rm_front_spaces {
 # pipe documentation of all procedures into dokuwiki formatted file
 for i in *.ipf
 do
-	echo "====== $i ======" >> dokuwiki.txt
+	echo "====== $i ======" >> $outf
 	cat "$i" \
 		| fn_grep \
 		| fn_reorder \
@@ -44,5 +49,5 @@ do
 		| comment_format \
 		| add_breaks \
 		| rm_front_spaces \
-		>> dokuwiki.txt
+		>> $outf
 done
