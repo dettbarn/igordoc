@@ -15,7 +15,27 @@ Some bash-like shell is required, with these nontrivial utilities:
 
 ## Usage
 
-Your procedure files need to have a certain layout, which I will outline here in more detail soon. Most importantly, you should prepend all function headers with a comment block, i.e. several lines starting with two slashes (//). These comment blocks will be used for the documentations.
+Your procedure files need to have a certain layout, similar to the example shown below. Most importantly, you should prepend all function headers with a comment block, i.e. several lines starting with two slashes (//). These comment blocks will be used for the documentations.
+
+    ...
+    ...
+    //=================================================================
+    // comment lines on top
+    // should be styled like this
+    // and you need those ===== separators in between
+    Function myfunction(foo, bar)
+        Variable foo
+        Variable bar
+    
+        // function body
+        // do stuff...
+        // do other stuff...
+    End
+    //=================================================================
+    // next function...
+    Function myfunction2(baz)
+    ...
+    ...
 
 To generate documentations out of all the \*.ipf files present, just call the desired make-\*.sh scripts inside your shell.
 
