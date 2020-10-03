@@ -15,11 +15,11 @@ function fn_grep {
 
 # move function header before the comments
 function fn_reorder {
-	perl -0777 -i.original -pe 's/(\/\/(=====|-----).*\r?\n?)((\/\/.*\r?\n?)*)(Function.*\r?\n?)/\n\5\3\n/g' $1
+	perl -0777 -i.original -pe 's/(\/\/(===|---).*\r?\n?)((\/\/.*\r?\n?)*)(Function.*\r?\n?)/\n\5\3\n/g' $1
 }
 
 # dokuwiki function formatting
-function fn_format {
+function fn_format_dokuwiki {
 	sed "s/\(\(Function.*\) \([^( ]\+\) \?([^)]*).*$\)/==== \3 ====\n''\1''/g" $1
 }
 
@@ -45,7 +45,7 @@ do
 	cat "$i" \
 		| fn_grep \
 		| fn_reorder \
-		| fn_format \
+		| fn_format_dokuwiki \
 		| comment_format \
 		| add_breaks \
 		| rm_front_spaces \
