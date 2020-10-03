@@ -2,7 +2,7 @@
 
 Scripts to generate documentations from [Igor Pro](https://www.wavemetrics.com/) user procedures (\*.ipf files) easily.
 
-So far [DokuWiki](https://en.wikipedia.org/wiki/DokuWiki) is the only supported target format.
+So far [DokuWiki](https://en.wikipedia.org/wiki/DokuWiki) and [TeX](https://en.wikipedia.org/wiki/TeX) are supported target formats.
 
 Take a look at [CONTRIBUTING.md](CONTRIBUTING.md) if you want to contribute.
 
@@ -40,6 +40,7 @@ Your procedure files need to have a certain layout, similar to the example shown
 To generate documentations out of all the \*.ipf files present, just call the desired make-\*.sh scripts inside your shell.
 
     ./make-dokuwiki.sh
+    ./make-tex.sh
 
 make-all.sh is a wrapper script that calls all other scripts.
 

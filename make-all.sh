@@ -6,5 +6,6 @@ if [ ! -f *.ipf ]; then
 fi
 
 ./make-dokuwiki.sh *.ipf
+./make-tex.sh *.ipf
 
 echo "All documentations have been generated."

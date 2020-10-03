@@ -1,6 +1,18 @@
-dokuwiki.txt
-dokuwiki_old.txt
-*.sh~
+# Igor Pro files
 *.ipf
 *.pxp
 *.uxp
+
+# temporary files
+*.sh~
+
+# dokuwiki output
+dokuwiki.txt
+dokuwiki_old.txt
+
+# (la)tex output and ps/pdf created from it
+*.aux
+*.log
+*.tex
+*.ps
+*.pdf
