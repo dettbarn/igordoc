@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ ! -f *.ipf ]; then
+if [ -z "$(find . -type f -name '*.ipf')" ]; then
 	echo "Error in $(basename $0): No procedure file found."
 	exit 1
 fi
