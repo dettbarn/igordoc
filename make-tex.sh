@@ -27,7 +27,7 @@ function escapes_tex {
                 | sed 's/©/\\textcopyright{}/g'
 }
 
-# pipe documentation of all procedures into dokuwiki formatted file
+# pipe documentation of all procedures into tex file
 echo "\\documentclass{article}" >> $outf
 echo "\\usepackage[latin1]{inputenc}" >> $outf
 echo "\\setlength\\parindent{0pt}" >> $outf
