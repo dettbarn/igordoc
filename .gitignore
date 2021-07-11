@@ -16,3 +16,6 @@ dokuwiki_old.txt
 *.tex
 *.ps
 *.pdf
+
+# html output
+*.html
