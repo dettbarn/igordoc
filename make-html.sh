@@ -10,7 +10,7 @@ fi
 
 source general.sh
 
-# dokuwiki function formatting
+# html function formatting
 function fn_format_html {
 	sed "s/\(\(Function.*\) \([^( ]\+\) \?([^)]*).*$\)/<h3>\3<\/h3><tt>\1<\/tt><br><br>/g" $1
 }
