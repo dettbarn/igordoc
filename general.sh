@@ -7,7 +7,7 @@ function fn_grep {
 
 # move function header before the comments
 function fn_reorder {
-	perl -0777 -i.original -pe 's/(\/\/(===|---).*\r?\n?)((\/\/.*\r?\n?)*)(Function.*\r?\n?)/\n\5\3\n/g' $1
+	perl -0777 -pe 's/(\/\/(===|---).*\r?\n?)((\/\/.*\r?\n?)*)(Function.*\r?\n?)/\n\5\3\n/g' $1
 }
 
 # remove double-slashes before comments
