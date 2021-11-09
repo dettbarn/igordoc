@@ -8,5 +8,6 @@ fi
 ./make-dokuwiki.sh *.ipf
 ./make-tex.sh *.ipf
 ./make-html.sh *.ipf
+./make-markdown.sh *.ipf
 
 echo "All documentations have been generated."

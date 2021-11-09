@@ -19,3 +19,6 @@ dokuwiki_old.txt
 
 # html output
 *.html
+
+# markdown output
+doc*.md
