@@ -1,7 +1,7 @@
 # CONTRIBUTING
 
 In principle anyone can contribute to igordoc.
-Here are some features that would be nice to have:
+Besides the issues in the Issues tab, here are some other features that would be nice to have:
 
 *  related to execution and/or the input:
     *  Port to Windows and macOS if possible (currently a pre-installed bash shell and some utilities are required to run igordoc)
@@ -16,7 +16,7 @@ Here are some features that would be nice to have:
     *  Improve the readability of the regexes
     *  Separate the matching and replacements of the regexes, to eliminate their redundancies among different scripts
 
-If you fully implement one of the points above, please make sure in your pull request you also remove it from the list. However, for the future, it would be better to work with the Issues tab instead.
+If you fully implement one of the points above, please make sure that in your pull request you also remove it from the list. If you tackle one of the Issues, please use the Issue number in the pull request title.
 
 Currently, regexes are used for parsing the procedure files, even though the Igor language technically is not a [regular language](https://en.wikipedia.org/wiki/Regular_language). The parsing still works in most cases, especially if one sticks to the file layout that is outlined in [README.md](README.md) under "Usage". However, when you contribute, you're free to use any other kind of parsing.
 

@@ -4,7 +4,7 @@ Scripts to generate documentations from [Igor Pro](https://www.wavemetrics.com/)
 
 So far [DokuWiki](https://en.wikipedia.org/wiki/DokuWiki), [TeX](https://en.wikipedia.org/wiki/TeX), plain HTML and Markdown are supported target formats.
 
-Take a look at [CONTRIBUTING.md](CONTRIBUTING.md) if you want to contribute.
+Take a look at [CONTRIBUTING.md](CONTRIBUTING.md) and the already existing issues if you want to contribute.
 
 ## Requirements
 
